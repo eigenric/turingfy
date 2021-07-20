@@ -36,6 +36,7 @@ if not computer_device["is_active"]:
 
 playlists = sp.user_playlists(user_program)
 program = next(pl for pl in playlists["items"] if pl["name"] == program_name)
+input_word = program["description"]
 word = program["description"]
 instructions = [
     {"index": i, "name": item["track"]["name"], "uri": item["track"]["uri"]}
@@ -154,9 +155,9 @@ time.sleep(t)
 sp.next_track()
 
 if "Yes" in current_instruction["name"]:
-    print(f"La palabra {word} ha sido aceptada por {program_name}")
+    print(f"La palabra {input_word} ha sido aceptada por {program_name}")
 elif "No" in current_instruction["name"]:
-    print(f"La palabra {word} ha sido rechazada por {program_name}")
+    print(f"La palabra {input_word} ha sido rechazada por {program_name}")
 
 # TODO: Manage playlist pagination.
 # while playlists:
