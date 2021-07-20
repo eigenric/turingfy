@@ -14,6 +14,7 @@ program_name = "Turing Machine - Palindrome"
 
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
+        username="riki319",
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET,
         redirect_uri=REDIRECT_URI,
@@ -120,8 +121,8 @@ sp.start_playback()
 # TODO: Manage playlist pagination.
 # while playlists:
 # for i, playlist in enumerate(playlists['items']):
-# print(f"\t{i + 1 + playlists['offset']} {playlist['uri']} {playlist['name']}")
-# if playlists['next']:
-# playlists = sp.next(playlists)
-# else:
-# playlists = None
+#   print(f"\t{i + 1 + playlists['offset']} {playlist['uri']} {playlist['name']}")
+#   if playlists['next']:
+#       playlists = sp.next(playlists)
+#   else:
+#       playlists = None
