@@ -14,7 +14,7 @@ program_name = "Turing Machine - Palindrome"
 
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
-        username="riki319",
+        username=user,
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET,
         redirect_uri=REDIRECT_URI,
@@ -22,9 +22,18 @@ sp = spotipy.Spotify(
     )
 )
 
+devices = sp.devices()["devices"]
+computer_device = next(
+    device for device in devices if device["type"] == "Computer"
+)
+
+if not computer_device["is_active"]:
+    sp.transfer_playback(computer_device["id"])
+
 playlists = sp.user_playlists(user)
 program = next(pl for pl in playlists["items"] if pl["name"] == program_name)
 word = program["description"]
+
 instructions = [
     {"index": i, "name": item["track"]["name"], "uri": item["track"]["uri"]}
     for i, item in enumerate(sp.playlist_tracks(program["id"])["items"])
