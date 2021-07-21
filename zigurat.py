@@ -67,9 +67,10 @@ halt = (
 while not halt:
     print(word)
     print(current_instruction["name"])
-    sp.add_to_queue(current_instruction["uri"])
+
+    off = {"position": current_instruction["index"]}
+    sp.start_playback(context_uri=program["uri"], offset=off)
     time.sleep(t)
-    sp.next_track()
 
     if current_instruction["name"] == "If":
         next_index = current_instruction["index"] + 1
@@ -85,9 +86,18 @@ while not halt:
         symbol = instructions[next_index]
         line_number = instructions[line_number_index]
 
-        sp.add_to_queue(symbol["uri"])
-        sp.add_to_queue(goto["uri"])
-        sp.add_to_queue(line_number["uri"])
+
+        off = {"position": symbol["index"]}
+        sp.start_playback(context_uri=program["uri"], offset=off)
+        time.sleep(t)
+
+        off = {"position": goto["index"]}
+        sp.start_playback(context_uri=program["uri"], offset=off)
+        time.sleep(t)
+
+        off = {"position": line_number["index"]}
+        sp.start_playback(context_uri=program["uri"], offset=off)
+        time.sleep(t)
 
         track_name_to_symbol(symbol)
         track_name_to_symbol(line_number)
@@ -102,16 +112,13 @@ while not halt:
         line_number_index = current_instruction["index"] + 1
         line_number = instructions[line_number_index]
 
-        sp.add_to_queue(line_number["uri"])
-
         track_name_to_symbol(line_number)
         print(line_number["name"])
 
         current_instruction = instructions[int(line_number["name"])]
-
-        sp.add_to_queue(line_number["uri"])
+        off = {"position": line_number["index"]}
+        sp.start_playback(context_uri=program["uri"], offset=off)
         time.sleep(t)
-        sp.next_track()
 
         current_instruction = instructions[int(line_number["name"])]
 
@@ -145,11 +152,8 @@ while not halt:
     )
 
 
-sp.start_playback()
-
-sp.add_to_queue(current_instruction["uri"])
-time.sleep(t)
-sp.next_track()
+off = {"position": current_instruction["index"]}
+sp.start_playback(context_uri=program["uri"], offset=off)
 
 if "Yes" in current_instruction["name"]:
     print(f"La palabra {input_word} ha sido aceptada por {program_name}")
