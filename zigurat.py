@@ -57,7 +57,7 @@ no_goto_instructions = (
     "Right to End",
 )
 reader_head = 0
-t = 3
+t = 5
 
 current_instruction = instructions[0]
 halt = (
@@ -66,6 +66,7 @@ halt = (
 
 while not halt:
     print(word)
+    print(reader_head)
     print(current_instruction["name"])
 
     off = {"position": current_instruction["index"]}
@@ -86,6 +87,9 @@ while not halt:
         symbol = instructions[next_index]
         line_number = instructions[line_number_index]
 
+        print(symbol["name"])
+        print(goto["name"])
+        print(line_number["name"])
 
         off = {"position": symbol["index"]}
         sp.start_playback(context_uri=program["uri"], offset=off)
@@ -126,6 +130,7 @@ while not halt:
 
         if current_instruction["name"] == "Delete":
             word = word[:reader_head] + "#" + word[reader_head + 1 :]
+
             if user_auth == user_program:
                 sp.user_playlist_change_details(
                     user_program, program["id"], description=word
