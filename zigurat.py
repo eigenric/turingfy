@@ -6,6 +6,8 @@ from sys import exit
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
+from utils import track_name_to_symbol
+
 CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.environ.get("SPOTIPY_CLIENT_SECRET")
 REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI")
@@ -87,12 +89,8 @@ while not halt:
         sp.add_to_queue(goto["uri"])
         sp.add_to_queue(line_number["uri"])
 
-        if symbol["name"] == "Zero":
-            symbol = "0"
-        elif symbol["name"] == "One":
-            symbol = "1"
-        elif symbol["name"] == "Blank Space":
-            symbol = "#"
+        track_name_to_symbol(symbol)
+        track_name_to_symbol(line_number)
 
         if word[reader_head] == symbol:
             current_instruction = instructions[int(line_number["name"])]
@@ -106,10 +104,8 @@ while not halt:
 
         sp.add_to_queue(line_number["uri"])
 
-        if line_number["name"] == "Zero":
-            line_number["name"] = "0"
-        elif line_number["name"] == "One":
-            line_number["name"] = "1"
+        track_name_to_symbol(line_number)
+        print(line_number["name"])
 
         current_instruction = instructions[int(line_number["name"])]
 
