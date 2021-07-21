@@ -142,10 +142,16 @@ while not halt:
             reader_head += 1
 
         elif current_instruction["name"] == "Start Again":
-            reader_head = len(word) - len(word.lstrip("#")) - 1
+            if len(word.lstrip("#")) > 0:
+                reader_head = len(word) - len(word.lstrip("#")) - 1
+            else:
+                reader_head = -1
 
         elif current_instruction["name"] == "Right to End":
-            reader_head = len(word.rstrip("#"))
+            if len(word.rstrip("#")) > 0:
+                reader_head = len(word.rstrip("#"))
+            else:
+                reader_head = len(word)
 
         next_instruction_index = current_instruction["index"] + 1
         current_instruction = instructions[next_instruction_index]
