@@ -36,8 +36,9 @@ if not computer_device["is_active"]:
 
 playlists = sp.user_playlists(user_program)
 program = next(pl for pl in playlists["items"] if pl["name"] == program_name)
-input_word = program["description"]
-word = program["description"]
+input_word = "".join(c for c in program["description"] if c.isdigit())
+word = input_word
+
 instructions = [
     {"index": i, "name": item["track"]["name"], "uri": item["track"]["uri"]}
     for i, item in enumerate(sp.playlist_tracks(program["id"])["items"])
