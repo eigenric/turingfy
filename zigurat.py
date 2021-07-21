@@ -106,8 +106,8 @@ while not halt:
         track_name_to_symbol(symbol)
         track_name_to_symbol(line_number)
 
-        if word[reader_head] == symbol:
-            current_instruction = instructions[int(line_number["name"])]
+        if word[reader_head] == symbol["name"]:
+            current_instruction = instructions[int(line_number["name"]) - 1]
         else:
             next_instruction_index = current_instruction["index"] + 4
             current_instruction = instructions[next_instruction_index]
@@ -119,12 +119,11 @@ while not halt:
         track_name_to_symbol(line_number)
         print(line_number["name"])
 
-        current_instruction = instructions[int(line_number["name"])]
         off = {"position": line_number["index"]}
         sp.start_playback(context_uri=program["uri"], offset=off)
         time.sleep(t)
 
-        current_instruction = instructions[int(line_number["name"])]
+        current_instruction = instructions[int(line_number["name"]) - 1]
 
     elif current_instruction["name"] in no_goto_instructions:
 
