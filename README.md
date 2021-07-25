@@ -1,6 +1,6 @@
 # Turingfy
 
-Use (weird) Spotify playlists to emulate a Turing Machine.
+Spotify Playlists as Post Turing Machines. Execute & Listen! 
 
 # Setting Environment Variables
 
