@@ -1,4 +1,4 @@
-# Zigurat
+# Turingfy
 
 Use (weird) Spotify playlists to emulate a Turing Machine.
 
