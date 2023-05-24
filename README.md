@@ -10,11 +10,11 @@ By carefully crafting the sequence of songs, one can think of playlist as progra
 
 ## Example Set of Instructions
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/59UpsSIbeT9j7lKDiTy7aT?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+https://open.spotify.com/playlist/59UpsSIbeT9j7lKDiTy7aT?si=41eacf416f4248a2
 
 ## Program Example n1: Binary Palindrome Checker
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1TGnAeGRWCVZsYxdBPjStO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+https://open.spotify.com/playlist/1TGnAeGRWCVZsYxdBPjStO?si=cd10444be59f478d
 
 ## Spotify API
 
