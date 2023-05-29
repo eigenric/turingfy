@@ -2,7 +2,7 @@
 
 Ever thought of Spotify playlist's as Turing Machines?
 
-Imagine the songs in your favorite playlist become the symbols on a tape, and the order of those songs becomes a series of instructions. In this intriguing concept, each song in the playlist represents a unique symbol or instruction that the "Turing Machine Playlist" reads and processes.
+Imagine the songs in your favorite playlist become the symbols on a tape, and the order of those songs becomes a series of instructions. In this intriguing concept, each song in the playlist represents a unique symbol or instruction that the Turingfy Interpreter reads and processes.
 
 Just like a traditional Turing Machine, this musical variant would have a tape, a head that scans the symbols (Playlist's description), and a set of rules (Songs) dictating how to interpret and manipulate the symbols. As the playlist plays, the "head" moves through the songs, following the rules encoded in the playlist, and executing operations accordingly.
 
