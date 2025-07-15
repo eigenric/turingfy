@@ -8,13 +8,8 @@ Just like a traditional Turing Machine, this musical variant would have a tape, 
 
 By carefully crafting the sequence of songs, one can think of playlist as programs that that solves specific problems, all while **enjoying a curated musical experience.**
 
-## Example Set of Instructions
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/59UpsSIbeT9j7lKDiTy7aT?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-## Program Example n1: Binary Palindrome Checker
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1TGnAeGRWCVZsYxdBPjStO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+- [Example Set of Instructions](https://open.spotify.com/playlist/1TGnAeGRWCVZsYxdBPjStO?si=ae1d931a35cf4b9b)
+- [Program Example n1: Binary Palindrome Checker](https://open.spotify.com/playlist/5aoJfOJPBK89dXc94izqfP?si=ba74c2d03da44a0c)
 
 ## Spotify API
 
