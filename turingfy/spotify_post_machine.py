@@ -42,7 +42,13 @@ class SpotifyPostTuringMachine(PostTuringMachine):
         if self.halted or self.pc >= len(self.program):
             self.halted = True
             return
-        # Reproduce la canción correspondiente a esta instrucción
         self.play_instruction(self.pc)
-        # Ejecuta la instrucción normalmente
         super().step()
+        # Actualiza la descripción de la playlist con la palabra actual
+        current_word = "".join(self.tape)
+        try:
+            self.sp.playlist_change_details(
+                self.playlist_id, description=f"{current_word}"
+            )
+        except Exception as e:
+            print(f"No se pudo actualizar la descripción de la playlist: {e}")
