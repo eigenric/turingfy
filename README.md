@@ -1,6 +1,6 @@
 # Turingfy - Proof of concept
 
-¿Ever thought of Spotify playlist's as Turing Machines?
+Ever thought of Spotify playlist's as Turing Machines?
 
 Imagine the songs in your favorite playlist become the symbols on a tape, and the order of those songs becomes a series of instructions. In this intriguing concept, each song in the playlist represents a unique symbol or instruction that the "Turing Machine Playlist" reads and processes.
 
