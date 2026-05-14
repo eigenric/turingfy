@@ -22,7 +22,7 @@ def get_spotify_client():
             client_id=client_id,
             client_secret=client_secret,
             redirect_uri=redirect_uri,
-            scope="playlist-modify-public playlist-modify-private playlist-read-private",
+            scope="playlist-modify-public playlist-modify-private playlist-read-private user-modify-playback-state",
         )
     )
     return sp
