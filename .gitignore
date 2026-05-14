@@ -137,3 +137,5 @@ dmypy.json
 set-env.sh
 .vscode
 .cache-riki319
+
+.dotenv
